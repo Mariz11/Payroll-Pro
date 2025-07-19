@@ -1,0 +1,23 @@
+runtime: nodejs20
+
+automatic_scaling:
+  min_idle_instances: MIN_IDLE_INSTANCES
+  max_concurrent_requests: MAX_CONCURRENT_REQUESTS
+
+instance_class: INSTANCE_CLASS
+
+inbound_services:
+  - warmup
+
+handlers:
+  - url: /.*
+    secure: always
+    script: auto
+
+env_variables:
+  TIMEZONE: 'Asia/Singapore'
+  TZ: 'Asia/Singapore'
+  NODE_ENV: 'production'
+
+vpc_access_connector:
+  name: projects/GCP_PROJECT_ID/locations/asia-southeast1/connectors/paypro-oci-connector

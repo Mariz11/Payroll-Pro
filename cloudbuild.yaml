@@ -1,0 +1,206 @@
+steps:
+  - name: 'node:20.13.1'
+    entrypoint: 'npm'
+    args: ['ci', '--legacy-peer-deps']
+
+  - name: 'node:20.13.1'
+    entrypoint: 'npm'
+    args: ['run', 'create-env', '.env']
+    env:
+      - 'BASE_PATH=${_BASE_PATH}'
+      - 'PROJECT_ID=${_PROJECT_ID}'
+
+      # Database configuration
+      - 'DB_NAME=${_DB_NAME}'
+      - 'DB_USER_NAME=${_DB_USER_NAME}'
+      - 'DB_HOST=${_DB_HOST}'
+      - 'DB_PORT=${_DB_PORT}'
+      - 'DB_CLIENT=${_DB_CLIENT}'
+      - 'DB_SOCKET_PATH=${_DB_SOCKET_PATH}'
+      - 'SERVICE_NAME=${_SERVICE_NAME}'
+      - 'UNI_STRING=${_UNI_STRING}'
+      - 'IAT=${_IAT}'
+      - 'NEXT_PUBLIC_JWT=${_NEXT_PUBLIC_JWT}'
+      - 'ML_BATCH_UPLOAD_CLIENT_ID=${_ML_BATCH_UPLOAD_CLIENT_ID}'
+      - 'ML_BATCH_UPLOAD_USERNAME=${_ML_BATCH_UPLOAD_USERNAME}'
+      - 'ML_SMS_USERNAME=${_ML_SMS_USERNAME}'
+      - 'ML_SMS_SENDER=${_ML_SMS_SENDER}'
+      - 'NEXT_PUBLIC_AUTOLOCK_TIMEOUT=${_NEXT_PUBLIC_AUTOLOCK_TIMEOUT}'
+      - 'NEXT_PUBLIC_RECAPTCHA_SITE_KEY=${_NEXT_PUBLIC_RECAPTCHA_SITE_KEY}'
+
+      # API Domains
+      - 'ML_AUTH_SERVICE_API_DOMAIN=${_ML_AUTH_SERVICE_API_DOMAIN}'
+      - 'ML_PAYROLL_API_DOMAIN=${_ML_PAYROLL_API_DOMAIN}'
+      - 'ML_CKCYC_API_DOMAIN=${_ML_CKCYC_API_DOMAIN}'
+      - 'ML_BATCH_UPLOAD_DOMAIN=${_ML_BATCH_UPLOAD_DOMAIN}'
+      - 'ML_SMS_API_DOMAIN=${_ML_SMS_API_DOMAIN}'
+      - 'ML_LOANS_DOMAIN=${_ML_LOANS_DOMAIN}'
+      - 'ML_KPX_DOMAIN=${_ML_KPX_DOMAIN}'
+      - 'ML_NOTIFICATION_API_DOMAIN=${_ML_NOTIFICATION_API_DOMAIN}'
+
+      # Email Configuration
+      - 'EMAIL_SENDER=${_EMAIL_SENDER}'
+      - 'SMTP_HOST=${_SMTP_HOST}'
+      - 'SMTP_SERVICE=${_SMTP_SERVICE}'
+      - 'SMTP_PORT=${_SMTP_PORT}'
+      - 'SMTP_USER=${_SMTP_USER}'
+
+      # File Upload URL
+      - 'NEXT_PUBLIC_ML_FILE_UPLOAD_URL=${_NEXT_PUBLIC_ML_FILE_UPLOAD_URL}'
+
+      # Database Pool Configuration
+      - 'DB_POOL_MAX=${_DB_POOL_MAX}'
+      - 'DB_POOL_MIN=${_DB_POOL_MIN}'
+      - 'DB_POOL_ACQUIRE=${_DB_POOL_ACQUIRE}'
+      - 'DB_POOL_IDLE=${_DB_POOL_IDLE}'
+
+      # Logs Database Configuration
+      - 'LOG_DB_NAME=${_LOG_DB_NAME}'
+      - 'LOG_DB_USER_NAME=${_LOG_DB_USER_NAME}'
+      - 'LOG_DB_HOST=${_LOG_DB_HOST}'
+      - 'LOG_DB_PORT=${_LOG_DB_PORT}'
+      - 'LOG_DB_CLIENT=${_LOG_DB_CLIENT}'
+      - 'LOG_DB_SOCKET_PATH=${_LOG_DB_SOCKET_PATH}'
+
+      # GCP Services
+      - 'GCP_CLOUD_STORAGE_BUCKET_NAME=${_GCP_CLOUD_STORAGE_BUCKET_NAME}'
+      - 'GCP_CLOUD_STORAGE_BUCKET_DIRECTORY=${_GCP_CLOUD_STORAGE_BUCKET_DIRECTORY}'
+      - 'GCP_CLOUD_SERVICE_ACCOUNT_CLIENT_EMAIL=${_GCP_CLOUD_SERVICE_ACCOUNT_CLIENT_EMAIL}'
+      - 'GCP_CLOUD_FUNCTION_URL_GENERATE_FAILED_REGISTRATION_CSV=${_GCP_CLOUD_FUNCTION_URL_GENERATE_FAILED_REGISTRATION_CSV}'
+      - 'NEXT_PUBLIC_GOOGLE_API=${_NEXT_PUBLIC_GOOGLE_API}'
+
+      # Firesbase
+      - 'NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=${_NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN}'
+      - 'NEXT_PUBLIC_FIREBASE_PROJECT_ID=${_NEXT_PUBLIC_FIREBASE_PROJECT_ID}'
+      - 'NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=${_NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET}'
+      - 'NEXT_PUBLIC_FIREBASE_MESSAGING_SENDING_ID=${_NEXT_PUBLIC_FIREBASE_MESSAGING_SENDING_ID}'
+      - 'NEXT_PUBLIC_FIREBASE_APP_ID=${_NEXT_PUBLIC_FIREBASE_APP_ID}'
+      - 'NEXT_PUBLIC_FIREBASE_DATABASE_ID=${_NEXT_PUBLIC_FIREBASE_DATABASE_ID}'
+      - 'FIREBASE_PROJECT_ID=${_FIREBASE_PROJECT_ID}'
+      - 'FIREBASE_DATABASE_ID=${_FIREBASE_DATABASE_ID}'
+      - 'FIREBASE_COLLECTION_BULK_EMPLOYEE_RESPONSES=${_FIREBASE_COLLECTION_BULK_EMPLOYEE_RESPONSES}'
+    secretEnv:
+      - 'DB_PASSWORD'
+      # Auth and JWT configuration
+      - 'NEXTAUTH_SECRET'
+      - 'JWT_SECRET_KEY'
+      # API Credentials
+      - 'ML_ANTI_TAMPERING_SECRET'
+      - 'ML_PAYROLL_API_KEY'
+      - 'ML_PAYROLL_SECRET_KEY'
+      - 'ML_BATCH_UPLOAD_API_KEY'
+      - 'ML_BATCH_UPLOAD_SECRET_KEY'
+      # SMS Configuration
+      - 'ML_SMS_PASSWORD'
+      # API Keys
+      - 'API_KEY'
+      - 'SECRET_KEY'
+      # Loan Schedule Keys
+      - 'ML_LOAN_SCHED_PUB_KEY'
+      - 'ML_LOAN_SCHED_PRIV_KEY'
+      # ReCAPTCHA Configuration
+      - 'NEXT_PUBLIC_RECAPTCHA_SECRET_KEY'
+      # Email Password
+      - 'SMTP_PASSWORD'
+      # Logs Database Password
+      - 'LOG_DB_PASSWORD'
+      # GCP Service Account Private Key
+      - 'GCP_CLOUD_SERVICE_ACCOUNT_PRIVATE_KEY'
+      # Firebase API Key
+      - 'NEXT_PUBLIC_FIREBASE_API_KEY'
+      # Google Maps API Key
+      - 'NEXT_PUBLIC_GOOGLE_MAPS_API_KEY'
+
+  - name: 'node:20.13.1'
+    entrypoint: 'npm'
+    args: ['run', 'build']
+
+  - name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        sed -e "s/MIN_IDLE_INSTANCES/${_MIN_IDLE_INSTANCES}/g" \
+            -e "s/MAX_CONCURRENT_REQUESTS/${_MAX_CONCURRENT_REQUESTS}/g" \
+            -e "s/INSTANCE_CLASS/${_INSTANCE_CLASS}/g" \
+            -e "s/GCP_PROJECT_ID/$PROJECT_ID/g" \
+            app.yaml.template > app.yaml
+
+  - name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        cp app.yaml .next/standalone/ && \
+        cp -r public .next/standalone/ && \
+        cp -r .next/static .next/standalone/.next/ && \
+        cp .gcloudignore .next/standalone/ && \
+        cp .npmrc .next/standalone/
+
+  - name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        if [ "$_AUTO_MIGRATE" = "false" ]; then
+          gcloud app deploy --no-promote
+        else
+          gcloud app deploy
+        fi
+    dir: '.next/standalone'
+
+  - name: gcr.io/cloud-builders/gcloud
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        gcloud app versions list --format="value(version.id)" --sort-by="~version.createTime" --service="default" | tail -n +40 | xargs -r gcloud app versions delete --quiet
+  
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['app', 'deploy', 'cron.yaml']
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+
+availableSecrets:
+  secretManager:
+    - versionName: projects/${PROJECT_ID}/secrets/DB_PASSWORD/versions/latest
+      env: 'DB_PASSWORD'
+    - versionName: projects/${PROJECT_ID}/secrets/NEXTAUTH_SECRET/versions/latest
+      env: 'NEXTAUTH_SECRET'
+    - versionName: projects/${PROJECT_ID}/secrets/JWT_SECRET_KEY/versions/latest
+      env: 'JWT_SECRET_KEY'
+    - versionName: projects/${PROJECT_ID}/secrets/ML_ANTI_TAMPERING_SECRET/versions/latest
+      env: 'ML_ANTI_TAMPERING_SECRET'
+    - versionName: projects/${PROJECT_ID}/secrets/ML_PAYROLL_API_KEY/versions/latest
+      env: 'ML_PAYROLL_API_KEY'
+    - versionName: projects/${PROJECT_ID}/secrets/ML_PAYROLL_SECRET_KEY/versions/latest
+      env: 'ML_PAYROLL_SECRET_KEY'
+    - versionName: projects/${PROJECT_ID}/secrets/ML_BATCH_UPLOAD_API_KEY/versions/latest
+      env: 'ML_BATCH_UPLOAD_API_KEY'
+    - versionName: projects/${PROJECT_ID}/secrets/ML_BATCH_UPLOAD_SECRET_KEY/versions/latest
+      env: 'ML_BATCH_UPLOAD_SECRET_KEY'
+    - versionName: projects/${PROJECT_ID}/secrets/ML_SMS_PASSWORD/versions/latest
+      env: 'ML_SMS_PASSWORD'
+    - versionName: projects/${PROJECT_ID}/secrets/API_KEY/versions/latest
+      env: 'API_KEY'
+    - versionName: projects/${PROJECT_ID}/secrets/SECRET_KEY/versions/latest
+      env: 'SECRET_KEY'
+    - versionName: projects/${PROJECT_ID}/secrets/ML_LOAN_SCHED_PUB_KEY/versions/latest
+      env: 'ML_LOAN_SCHED_PUB_KEY'
+    - versionName: projects/${PROJECT_ID}/secrets/ML_LOAN_SCHED_PRIV_KEY/versions/latest
+      env: 'ML_LOAN_SCHED_PRIV_KEY'
+    - versionName: projects/${PROJECT_ID}/secrets/NEXT_PUBLIC_RECAPTCHA_SECRET_KEY/versions/latest
+      env: 'NEXT_PUBLIC_RECAPTCHA_SECRET_KEY'
+    - versionName: projects/${PROJECT_ID}/secrets/SMTP_PASSWORD/versions/latest
+      env: 'SMTP_PASSWORD'
+    - versionName: projects/${PROJECT_ID}/secrets/LOG_DB_PASSWORD/versions/latest
+      env: 'LOG_DB_PASSWORD'
+    - versionName: projects/${PROJECT_ID}/secrets/GCP_CLOUD_SERVICE_ACCOUNT_PRIVATE_KEY/versions/latest
+      env: 'GCP_CLOUD_SERVICE_ACCOUNT_PRIVATE_KEY'
+    - versionName: projects/${PROJECT_ID}/secrets/NEXT_PUBLIC_FIREBASE_API_KEY/versions/latest
+      env: 'NEXT_PUBLIC_FIREBASE_API_KEY'
+    - versionName: projects/${PROJECT_ID}/secrets/NEXT_PUBLIC_GOOGLE_MAPS_API_KEY/versions/latest
+      env: 'NEXT_PUBLIC_GOOGLE_MAPS_API_KEY'
+
+timeout: 1800s

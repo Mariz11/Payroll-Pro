@@ -1,0 +1,25 @@
+import { Calendar } from 'antd';
+
+export enum FormType {
+  MonthYearPicker = 'MonthYearPicker',
+  MonthPicker = 'MonthPicker',
+  Dropdown = 'Dropdown',
+  'File Upload' = 'File Upload',
+  Checkbox = 'Checkbox',
+  Radio = 'Radio',
+  Button = 'Button',
+  Textarea = 'Textarea',
+  InputText = 'InputText',
+  Time = 'Time',
+  InputNumber = 'InputNumber',
+  Date = 'Date',
+  Prompt = 'Prompt',
+  Password = 'Password',
+  Count = 'Count',
+  DateTime = 'DateTime',
+  MultiSelect = 'MultiSelect',
+  Calendar = 'Calendar',
+  StartCalendar = 'StartCalendar',
+  EndCalendar = 'EndCalendar',
+  MultiSelectForDeduction = 'MultiSelectForDeduction',
+}

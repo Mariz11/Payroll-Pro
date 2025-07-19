@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap');
+
+/* CUSTOM GLOBAL */
+html,
+body {
+  font-family: 'Manrope', sans-serif !important;
+}
+
+/* SIDEBAR ITEMS HOVER */
+.sidebar-items:hover {
+  background-color: #d61117 !important;
+}
+
+/* DROPDOWNS */
+.p-dropdown-item {
+  text-transform: uppercase;
+}
+
+/* LOGIN PAGE */
+.login .p-float-label {
+  font-size: large;
+}
+
+.login .p-button {
+  border-radius: 9999px;
+  background-color: #d61117;
+}
+
+.p-button:disabled {
+  background-color: #e6acac;
+  border-color: #fca5a5;
+}
+
+.login .sign-in-google {
+  border-radius: 9999px;
+  background: #1e1e1e !important;
+}
+
+.secondary-color {
+  background-color: #1e1e1e !important;
+  border: #1e1e1e !important;
+}
+
+.secondary-color:hover {
+  background-color: #000000 !important;
+  border: #000000 !important;
+}
+
+.secondary-color #disable {
+  background-color: #585858 !important;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+/* DASHBOARD */
+.doughnut {
+  background-color: #1e1e1e;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  height: auto;
+  color: white;
+}
+
+.wallet-asset {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  height: auto;
+  color: white;
+}
+
+.line-container {
+  background-color: white;
+  margin-top: 20px;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.custom-calendar-input .p-calendar .p-inputtext {
+  font-size: 24px;
+  background-color: blue;
+  border-radius: 50%;
+  color: white;
+  border: none;
+}
+
+.p-calendar .p-button {
+  background-color: #d61117 !important;
+}
+
+.recent-logs {
+  margin-left: 20px;
+}
+
+/* MANAGEMENT */
+.shifts .p-inputtext {
+  width: 100%;
+}
+
+.shifts .p-button {
+  background-color: #d61117;
+}
+
+.password .p-inputtext {
+  width: 100% !important;
+}
+
+input:disabled,
+select:disabled,
+.p-dropdown.p-disabled,
+.p-treeselect.p-disabled,
+.p-multiselect.p-disabled,
+textarea:disabled {
+  background-color: rgb(229 231 235) !important;
+  cursor: default !important;
+}
+
+.p-button.p-button-secondary.p-disabled {
+  background-color: #838383 !important;
+}
+
+.p-toast {
+  z-index: 999999;
+}
+
+/* SIDEBAR */
+.ps-menu-button:hover {
+  background-color: rgb(237, 237, 237) !important;
+  border-radius: 50px;
+  color: #1e1e1e !important;
+}
+
+.weekDays-selector {
+  display: inline-block;
+  border-radius: 6px;
+  background: #dddddd;
+  height: 81px;
+  width: 166px;
+  line-height: 80px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.weekDays-selector input[type='checkbox']:checked + label {
+  background: #d61117;
+  color: #ffffff;
+}
+
+.p-timeline-event-separator {
+  position: relative;
+  top: 6px;
+}
+
+.p-fieldset-legend {
+  background-color: #d80404 !important;
+}
+
+.p-fieldset-legend a {
+  color: #fff !important;
+}
+
+.custombar1 .p-scrollpanel-bar-wrapper {
+  background-color: #bbb !important;
+}
+
+.announcementbar1 .p-scrollpanel-bar {
+  opacity: 1;
+  background-color: #bbb !important;
+}
+
+/* Custom scrollbar track */
+
+/* Custom scrollbar thumb on hover */
+.announcementbar1 .p-scrollpanel-bar:hover {
+  background-color: #bbb !important;
+}
+
+.announcementbar1 .p-fieldset-legend {
+  min-width: 100%;
+}
+
+.announcementbar1 .p-fieldset-legend a {
+  display: flow;
+}
+
+.announcementgallery .p-galleria-thumbnail-wrapper {
+  display: none;
+}
+
+/* read only editor */
+.read-only-editor .p-editor-content {
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0;
+}
+
+.read-only-editor p {
+  font-size: large;
+}
+
+.read-only-editor .p-editor-toolbar {
+  display: none;
+}
+
+.table-header .p-badge {
+  background: #000;
+  color: #fff;
+}
+
+.p-column-filter-clear-button {
+  display: none !important;
+}
+
+.announcement-fieldset .p-badge {
+  background-color: #7bf72f !important;
+}
+
+.tnc p {
+  line-height: 1.5 !important;
+  text-align: justify;
+}
+
+.tnc-panel .p-scrollpanel-bar .p-scrollpanel-bar-y {
+  color: #585858 !important;
+  background-color: #838383 !important;
+}
+
+.tnc-panel .p-scrollpanel-bar-y {
+  color: #585858 !important;
+  opacity: 100%;
+  background-color: #838383 !important;
+  padding: 1;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* 
+.p-sidebar {
+  overflow: visible!important;
+} */
+/* .custom-time-picker .react-time-picker__wrapper {
+  border-radius: 4px;
+  border-color:#dcdcdc; 
+  height: 40px; 
+  font-size: 15px;
+  padding-left: 5px;
+  color:#555555
+}
+.custom-time-picker .react-time-picker__wrapper:hover {
+  border-radius: 4px;
+  border-color:#d61117; 
+ 
+} */
+
+.ant-picker-input input {
+  color: #757575 !important;
+}
+
+.ant-picker:hover,
+.ant-picker:focus-within {
+  border-color: #d61117;
+}
+
+.ant-input:focus {
+  border-color: #57a8e9;
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 2px rgba(87, 168, 233, 0.2);
+  box-shadow: 0 0 0 2px rgba(87, 168, 233, 0.2);
+}
+
+.ant-input:focus {
+  border-color: #d61117 !important;
+  /* Change border color when input is clicked */
+}
+
+.ant-btn {
+  background-color: #d61117 !important;
+  color: white;
+}
+
+.ant-btn span {
+  color: white;
+}
+
+.ant-picker-dropdown {
+  z-index: 199999;
+}
+
+.adjustment-add button {
+  background-color: #d61117 !important;
+}
+.adjustment-add button:disabled {
+  background-color: #ebbdbd !important;
+  border-color: #ebbdbd;
+}
+/* .react-time-picker__wrapper {
+border: none !important;
+padding:0px;
+} */
+
+/* .rc-time-picker-input{
+  border: none !important;
+  font-size:15px!important;
+  padding: 0;
+} */
+/* .announcement-p-sidebar-md  .p-tooltip {
+  z-index: 9999!important; /* Adjust as needed to ensure it's above other elements */
+/* } */
+/* .announcement-p-sidebar-md .ql-snow .ql-tooltip {
+  z-index: 9999!important; 
+  position: fixed!important;
+  transform: translateY(700%) translateX(50%)!important;
+} */
+.manual-logout-button {
+  background-color: #d61117;
+}
+
+.p-datatable-space-between-columns .p-column-body {
+  display: flex;
+  align-items: center;
+}
+
+.p-datatable-space-between-columns .p-datatable-column {
+  margin-right: 10px;
+  /* Adjust as per your spacing preference */
+}
+
+.charge-input .p-inputnumber::placeholder {
+  color: black !important;
+}
+
+.p-datatable .p-datatable-tbody > tr.p-highlight {
+  background-color: #eeeeee !important;
+  color: #4f4f4f !important;
+}
+
+.ant-popover {
+  z-index: 999999999999 !important;
+}
+
+.p-tooltip-left {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 10px;
+}
+.custom-switch .p-inputswitch-slider:before {
+  background-color: pink; /* Color of the knob */
+}
+
+.p-custom-button-no-deactivate {
+  background-color: white !important;
+  color: black !important;
+  border: none !important;
+}
+
+.primary-button {
+  background-color: #d61117 !important;
+  /* color: white; */
+}
+
+#employees-list .p-datatable>.p-datatable-wrapper {
+  overflow: visible;
+}

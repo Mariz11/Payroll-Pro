@@ -1,0 +1,5 @@
+cron:
+  - description: Update locations status to expired.
+    url: /api/location/cron/update-locations-status-to-expired
+    schedule: every 1 hours
+    timezone: Asia/Hong_Kong

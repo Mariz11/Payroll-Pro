@@ -1,0 +1,68 @@
+// 'use strict';
+
+// /** @type {import('sequelize-cli').Migration} */
+// module.exports = {
+//   async up(queryInterface, Sequelize) {
+//     return queryInterface.sequelize.transaction((t) => {
+//       return Promise.all([
+//         queryInterface.addColumn(
+//           'announcements',
+//           'type',
+//           {
+//             type: Sequelize.STRING(15),
+//             allowNull: false,
+//             after: 'content',
+//             defaultValue: 'ADMIN',
+//           },
+//           {
+//             transaction: t,
+//           }
+//         ),
+//       ]);
+//     });
+//   },
+
+//   async down(queryInterface, Sequelize) {
+//     return queryInterface.sequelize.transaction((t) => {
+//       return Promise.all([
+//         queryInterface.removeColumn('announcements', 'type', {
+//           transaction: t,
+//         }),
+//       ]);
+//     });
+//   },
+// };
+'use strict';
+
+/** @type {import('sequelize-cli').Migration} */
+module.exports = {
+  async up(queryInterface, Sequelize) {
+    return queryInterface.sequelize.transaction((t) => {
+      return Promise.all([
+        queryInterface.addColumn(
+          'announcements',
+          'type',
+          {
+            type: Sequelize.INTEGER,
+            allowNull: false,
+            after: 'content',
+            defaultValue: 1,
+          },
+          {
+            transaction: t,
+          }
+        ),
+      ]);
+    });
+  },
+
+  async down(queryInterface, Sequelize) {
+    return queryInterface.sequelize.transaction((t) => {
+      return Promise.all([
+        queryInterface.removeColumn('announcements', 'type', {
+          transaction: t,
+        }),
+      ]);
+    });
+  },
+};

@@ -1,0 +1,47 @@
+{
+  "testData": [
+    {
+      "firstAllowance": 50.0,
+      "secondAllowance": 50.43,
+      "wholeWeekAllowanceforHalf": 652.8,
+      "wholeWeekAllowanceforFull": 703.01,
+      "wholeWeekAllowanceforNone": 602.58
+    },
+    {
+      "firstAllowance": 50.0,
+      "secondAllowance": 50.0,
+      "wholeWeekAllowanceforHalf": 650.0,
+      "wholeWeekAllowanceforFull": 700.0,
+      "wholeWeekAllowanceforNone": 600.0
+    },
+    {
+      "firstAllowance": 250.0,
+      "secondAllowance": 250.0,
+      "wholeWeekAllowanceforHalf": 3250.0,
+      "wholeWeekAllowanceforFull": 3500.0,
+      "wholeWeekAllowanceforNone": 600.0
+    },
+    {
+      "firstAllowance": 500.0,
+      "secondAllowance": 500.0,
+      "wholeWeekAllowanceforHalf": 650.0,
+      "wholeWeekAllowanceforFull": 700.0,
+      "wholeWeekAllowanceforNone": 600.0
+    },
+    {
+      "firstAllowance": 750.5,
+      "secondAllowance": 500.5,
+      "wholeWeekAllowanceforHalf": 650.0,
+      "wholeWeekAllowanceforFull": 700.0,
+      "wholeWeekAllowanceforNone": 600.0
+    },
+    {
+      "firstAllowance": 3000.0,
+      "secondAllowance": 2000.0,
+      "wholeWeekAllowanceforHalf": 650.0,
+      "wholeWeekAllowanceforFull": 700.0,
+      "wholeWeekAllowanceforNone": 600.0
+    }
+  ],
+  "tempData": []
+}

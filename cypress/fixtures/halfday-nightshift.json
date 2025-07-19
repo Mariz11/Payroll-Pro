@@ -1,0 +1,157 @@
+[
+  {
+    "timeIn": "09:00 PM",
+    "timeOut": "01:00 AM",
+    "lunchOut": "",
+    "lunchIn": "",
+
+    "halfDay": "Yes",
+    "late": "00h 00m",
+    "undertime": "00h 00m",
+    "creditableOT": "00h 00m",
+    "status": "PRESENT"
+  },
+  {
+    "timeIn": "08:30 PM",
+    "timeOut": "01:00 AM",
+    "lunchOut": "",
+    "lunchIn": "",
+    "halfDay": "Yes",
+    "late": "00h 00m",
+    "undertime": "00h 00m",
+    "creditableOT": "00h 00m",
+    "status": "PRESENT"
+  },
+  {
+    "timeIn": "08:30 PM",
+    "timeOut": "12:59 AM",
+    "lunchOut": "",
+    "lunchIn": "",
+    "halfDay": "No",
+    "late": "-",
+    "undertime": "-",
+    "creditableOT": "-",
+    "status": "ABSENT"
+  },
+  {
+    "timeIn": "09:30 PM",
+    "timeOut": "01:00 AM",
+    "lunchOut": "",
+    "lunchIn": "",
+    "halfDay": "Yes",
+    "late": "00h 30m",
+    "undertime": "00h 00m",
+    "creditableOT": "00h 00m",
+    "status": "PRESENT"
+  },
+  {
+    "timeIn": "09:30 PM",
+    "timeOut": "02:00 AM",
+    "lunchOut": "",
+    "lunchIn": "",
+    "halfDay": "Yes",
+    "late": "00h 30m",
+    "undertime": "00h 00m",
+    "creditableOT": "00h 00m",
+    "status": "PRESENT"
+  },
+  {
+    "timeIn": "10:01 PM",
+    "timeOut": "01:00 AM",
+    "lunchOut": "",
+    "lunchIn": "",
+    "halfDay": "No",
+    "late": "-",
+    "undertime": "-",
+    "creditableOT": "-",
+    "status": "ABSENT"
+  },
+  {
+    "timeIn": "09:00 PM",
+    "timeOut": "01:30 AM",
+    "lunchOut": "",
+    "lunchIn": "",
+    "halfDay": "Yes",
+    "late": "00h 00m",
+    "undertime": "00h 00m",
+    "creditableOT": "00h 00m",
+    "status": "PRESENT"
+  },
+  {
+    "timeIn": "09:00 PM",
+    "timeOut": "02:00 AM",
+    "lunchOut": "",
+    "lunchIn": "",
+    "halfDay": "Yes",
+    "late": "00h 00m",
+    "undertime": "00h 00m",
+    "creditableOT": "00h 00m",
+    "status": "PRESENT"
+  },
+  {
+    "timeIn": "09:00 PM",
+    "timeOut": "02:01 AM",
+    "lunchOut": "",
+    "lunchIn": "",
+    "halfDay": "No",
+    "late": "00h 00m",
+    "undertime": "03h 59m",
+    "creditableOT": "00h 00m",
+    "status": "PRESENT"
+  },
+  {
+    "timeIn": "01:00 AM",
+    "timeOut": "06:00 AM",
+    "lunchOut": "",
+    "lunchIn": "",
+    "halfDay": "Yes",
+    "late": "00h 00m",
+    "undertime": "00h 00m",
+    "creditableOT": "00h 00m",
+    "status": "PRESENT"
+  },
+  {
+    "timeIn": "02:00 AM",
+    "timeOut": "06:00 AM",
+    "lunchOut": "",
+    "lunchIn": "",
+    "halfDay": "Yes",
+    "late": "00h 00m",
+    "undertime": "00h 00m",
+    "creditableOT": "00h 00m",
+    "status": "PRESENT"
+  },
+  {
+    "timeIn": "01:00 AM",
+    "timeOut": "05:59 AM",
+    "lunchOut": "",
+    "lunchIn": "",
+    "halfDay": "No",
+    "late": "-",
+    "undertime": "-",
+    "creditableOT": "-",
+    "status": "ABSENT"
+  },
+  {
+    "timeIn": "02:00 AM",
+    "timeOut": "06:30 AM",
+    "lunchOut": "",
+    "lunchIn": "",
+    "halfDay": "Yes",
+    "late": "00h 00m",
+    "undertime": "00h 00m",
+    "creditableOT": "00h 00m",
+    "status": "PRESENT"
+  },
+  {
+    "timeIn": "02:30 AM",
+    "timeOut": "06:30 AM",
+    "lunchOut": "",
+    "lunchIn": "",
+    "halfDay": "No",
+    "late": "-",
+    "undertime": "-",
+    "creditableOT": "-",
+    "status": "ABSENT"
+  }
+]
